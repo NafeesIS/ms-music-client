@@ -1,0 +1,19 @@
+.slider-item {
+    position: relative;
+}
+
+.slider-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.legend-left {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    font-family: serif;
+    /* color: white; */
+}
