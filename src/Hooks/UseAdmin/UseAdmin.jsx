@@ -7,7 +7,7 @@ const useAdmin = () => {
 
     const fetchAdminStatus = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/users/admin/${user?.email}`);
+            const response = await fetch(`https://ms-music-server.vercel.app/users/admin/${user?.email}`);
             const data = await response.json();
             return data.admin;
         } catch (error) {

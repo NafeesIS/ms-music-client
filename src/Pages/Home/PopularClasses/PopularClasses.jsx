@@ -5,7 +5,7 @@ const PopularClasses = () => {
 
     useEffect(() => {
         // Fetch latest class data from the API
-        fetch("http://localhost:5000/classes")
+        fetch("https://ms-music-server.vercel.app/classes")
             .then((res) => res.json())
             .then((data) => {
                 // Sort classes based on the number of students in descending order

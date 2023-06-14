@@ -4,7 +4,7 @@ const Instructors = () => {
     const [instructors, setInstructors] = useState([]);
     useEffect(() => {
         // Fetch latest class data from the API
-        fetch('http://localhost:5000/instructors')
+        fetch('https://ms-music-server.vercel.app/instructors')
             .then(res => res.json())
             .then(data => setInstructors(data))
             .catch(error => console.log(error));

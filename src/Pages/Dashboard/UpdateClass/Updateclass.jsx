@@ -20,7 +20,7 @@ const UpdateClass = () => {
     });
 
     useEffect(() => {
-        fetch(`http://localhost:5000/newclasses/${id}`, {
+        fetch(`https://ms-music-server.vercel.app/newclasses/${id}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${authToken}`,
@@ -45,7 +45,7 @@ const UpdateClass = () => {
             price: e.target.elements.price.value,
         };
 
-        fetch(`http://localhost:5000/newclasses/${id}`, {
+        fetch(`https://ms-music-server.vercel.app/newclasses/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

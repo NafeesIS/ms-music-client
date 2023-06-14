@@ -10,7 +10,7 @@ const Classes = () => {
 
     useEffect(() => {
         // Fetch latest class data from the API
-        fetch("http://localhost:5000/classes")
+        fetch("https://ms-music-server.vercel.app/classes")
             .then((res) => res.json())
             .then((data) => setClasses(data))
             .catch((error) => console.log(error));
@@ -20,7 +20,7 @@ const Classes = () => {
         const fetchData = async () => {
             try {
                 const token = localStorage.getItem('access-token');
-                const response = await fetch(`http://localhost:5000/selected_classes?email=${user.email}`, {
+                const response = await fetch(`https://ms-music-server.vercel.app/selected_classes?email=${user.email}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -63,7 +63,7 @@ const Classes = () => {
                 email: user.email,
             };
 
-            fetch("http://localhost:5000/selected_classes", {
+            fetch("https://ms-music-server.vercel.app/selected_classes", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",

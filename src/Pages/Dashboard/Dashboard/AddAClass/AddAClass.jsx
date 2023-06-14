@@ -30,7 +30,7 @@ const AddAClass = () => {
         };
 
         // Handle form submission here
-        fetch('http://localhost:5000/newclasses', {
+        fetch('https://ms-music-server.vercel.app/newclasses', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

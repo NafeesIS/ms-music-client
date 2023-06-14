@@ -10,7 +10,7 @@ const ManageClasses = () => {
     const [classes, setClasses] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/newclasses")
+        fetch("https://ms-music-server.vercel.app/newclasses")
             .then((res) => res.json())
             .then((data) => setClasses(data))
             .catch((error) => console.log(error));
@@ -24,7 +24,7 @@ const ManageClasses = () => {
             return classItem;
         });
 
-        fetch(`http://localhost:5000/newclasses/${classId}`, {
+        fetch(`https://ms-music-server.vercel.app/newclasses/${classId}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const ManageClasses = () => {
             return classItem;
         });
 
-        fetch(`http://localhost:5000/newclasses/${classId}`, {
+        fetch(`https://ms-music-server.vercel.app/newclasses/${classId}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -98,7 +98,7 @@ const ManageClasses = () => {
                     return classItem;
                 });
 
-                fetch(`http://localhost:5000/newclasses/${classId}`, {
+                fetch(`https://ms-music-server.vercel.app/newclasses/${classId}`, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",

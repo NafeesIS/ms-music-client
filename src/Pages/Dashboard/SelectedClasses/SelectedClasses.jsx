@@ -11,7 +11,7 @@ const SelectedClasses = () => {
         const fetchData = async () => {
             try {
                 const token = localStorage.getItem('access-token');
-                const response = await fetch(`http://localhost:5000/selected_classes?email=${user.email}`, {
+                const response = await fetch(`https://ms-music-server.vercel.app/selected_classes?email=${user.email}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -39,7 +39,7 @@ const SelectedClasses = () => {
             confirmButtonText: 'Yes, remove it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/selected_classes/${classItem._id}`, {
+                fetch(`https://ms-music-server.vercel.app/selected_classes/${classItem._id}`, {
                     method: 'DELETE',
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('access-token')}`,

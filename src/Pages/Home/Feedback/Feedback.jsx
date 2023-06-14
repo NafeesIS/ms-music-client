@@ -6,7 +6,7 @@ const Feedback = () => {
 
     useEffect(() => {
         // Fetch latest feedback data from the API
-        fetch('http://localhost:5000/feedback')
+        fetch('https://ms-music-server.vercel.app/feedback')
             .then(res => res.json())
             .then(data => setFeedbacks(data))
             .catch(error => console.log(error));

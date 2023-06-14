@@ -37,7 +37,7 @@ const SignUp = () => {
                 updateUserData(user, name, photoUrl)
                     .then(() => {
                         const saveUser = { name: name, email: email };
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://ms-music-server.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const SignUp = () => {
                 console.log(user);
 
                 const saveUser = { name: user.displayName, email: user.email };
-                fetch('http://localhost:5000/users', {
+                fetch('https://ms-music-server.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

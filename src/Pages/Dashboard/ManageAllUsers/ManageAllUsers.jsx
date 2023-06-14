@@ -8,7 +8,7 @@ const ManageAllUsers = () => {
     const { user } = useContext(AuthContext);
     const { data: users = [], refetch } = useQuery(['users'], async () => {
         const token = localStorage.getItem('access-token');
-        const response = await fetch('http://localhost:5000/users', {
+        const response = await fetch('https://ms-music-server.vercel.app/users', {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -23,7 +23,7 @@ const ManageAllUsers = () => {
 
     const handleMakeAdmin = (user) => {
         const token = localStorage.getItem('access-token');
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://ms-music-server.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -47,7 +47,7 @@ const ManageAllUsers = () => {
 
     const handleMakeInstructor = (user) => {
         const token = localStorage.getItem('access-token');
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        fetch(`https://ms-music-server.vercel.app/users/instructor/${user._id}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -71,7 +71,7 @@ const ManageAllUsers = () => {
 
     const handleDelete = (user) => {
         const token = localStorage.getItem('access-token');
-        fetch(`http://localhost:5000/users/${user._id}`, {
+        fetch(`https://ms-music-server.vercel.app/users/${user._id}`, {
             method: 'DELETE',
             headers: {
                 Authorization: `Bearer ${token}`,

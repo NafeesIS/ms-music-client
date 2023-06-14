@@ -7,7 +7,7 @@ const useInstructor = () => {
 
     const fetchInstructorStatus = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/users/instructor/${user?.email}`);
+            const response = await fetch(`https://ms-music-server.vercel.app/users/instructor/${user?.email}`);
             const data = await response.json();
             return data.instructor;
         } catch (error) {

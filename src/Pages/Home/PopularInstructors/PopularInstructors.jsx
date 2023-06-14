@@ -5,7 +5,7 @@ const PopularInstructors = () => {
 
     useEffect(() => {
         // Fetch latest instructor data from the API
-        fetch("http://localhost:5000/instructors")
+        fetch("https://ms-music-server.vercel.app/instructors")
             .then((res) => res.json())
             .then((data) => {
                 // Sort instructors based on the number of classes taken in descending order

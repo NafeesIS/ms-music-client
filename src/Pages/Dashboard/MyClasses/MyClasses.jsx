@@ -11,7 +11,7 @@ const MyClasses = () => {
     const [classes, setClasses] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/newclasses?instructorEmail=${instructorEmail}`, {
+        fetch(`https://ms-music-server.vercel.app/newclasses?instructorEmail=${instructorEmail}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${authToken}`,
@@ -46,7 +46,7 @@ const MyClasses = () => {
                                 <h2 className="text-xl font-bold">{classItem.name}</h2>
                                 <p className="text-gray-600 mb-4">Status: {classItem.status}</p>
                                 <p className="text-gray-600 mb-4">Total Enrolled Students: {classItem.totalEnrolledStudents}</p>
-                                <p className="text-gray-600 mb-4">Feedback: {classItem.feedback}</p>
+                                <p className="text-gray-600 mb-4">Feedback: {classItem.status === 'Denied' ? classItem.feedback : 'N/A'}</p>
                                 <Link to={`/dashboard/updateclass/${classItem._id}`}>
                                     <button
                                         className="btn bg-pink-800 hover:bg-pink-900 text-white px-4 py-2 rounded-md"

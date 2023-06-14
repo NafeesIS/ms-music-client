@@ -84,7 +84,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/dashboard/updateclass/:id',
                         element: <UpdateClass></UpdateClass>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/newclasses/${params.id}`)
+                        loader: ({ params }) => fetch(`https://ms-music-server.vercel.app/newclasses/${params.id}`)
                     },
                     {
                         path: '/dashboard/payment',
