@@ -3,6 +3,7 @@ import { AuthContext } from "../../../Hooks/Provider/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const ManageClasses = () => {
+
     const authContext = useContext(AuthContext);
     const instructorEmail = authContext.user.email;
     const authToken = authContext.token;
