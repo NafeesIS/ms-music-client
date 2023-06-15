@@ -103,7 +103,7 @@ const Login = () => {
                         Sir, Insert Your Email & Password Correctly!
                     </h6>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-4">
                     <div className="card-body">
                         <h1 className="text-5xl text-center font-bold italic font-serif">Login now!</h1>
                         <form onSubmit={handleLogin}>
@@ -142,7 +142,7 @@ const Login = () => {
                             Login with Gmail
                         </button>
                         <p className="text-center">
-                            New to Toy Store?{' '}
+                            New to MS Music?{' '}
                             <Link className="text-pink-800 hover:text-pink-950 font-bold" to={'/signup'}>
                                 Sign Up
                             </Link>
