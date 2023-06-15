@@ -25,13 +25,7 @@ const PopularClasses = () => {
 
     const handleSelectClass = (classItem) => {
         if (user && user.email) {
-            const selectedItem = {
-                image: classItem.image,
-                instructor: classItem.instructor,
-                availableSeats: classItem.availableSeats,
-                price: classItem.price,
-                email: user.email,
-            };
+
 
             // Check if the class item is already selected by the user
             const isClassItemSelected = popularClasses.find(
@@ -48,6 +42,13 @@ const PopularClasses = () => {
                 });
                 return;
             }
+            const selectedItem = {
+                image: classItem.image,
+                instructor: classItem.instructor,
+                availableSeats: classItem.availableSeats,
+                price: classItem.price,
+                email: user.email,
+            };
 
             fetch("https://ms-music-server.vercel.app/selected_classes", {
                 method: "POST",
@@ -110,7 +111,7 @@ const PopularClasses = () => {
                                     <span className="font-semibold m-1">Price:</span>
                                     {popularClass.price}
                                 </p>
-                                <div className="card-actions">
+                                {/* <div className="card-actions">
                                     {user ? (
                                         <button
                                             className="btn btn-primary bg-[#0e6969]"
@@ -126,7 +127,7 @@ const PopularClasses = () => {
                                             </button>
                                         </Link>
                                     )}
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
