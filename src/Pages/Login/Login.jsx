@@ -62,6 +62,7 @@ const Login = () => {
                     .then((res) => res.json())
                     .then((data) => {
                         Swal.fire({
+                            icon: 'success',
                             title: 'Successfully Logged In',
                             showClass: {
                                 popup: 'animate__animated animate__fadeInDown',
