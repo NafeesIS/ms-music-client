@@ -8,7 +8,7 @@ import SignUp from '../Pages/SignUp/SignUp';
 import Login from '../Pages/Login/Login';
 // import Classes from '../Pages/Classes/Classes';
 import Instructors from '../Pages/Instructors/Instructors';
-import Dashboard from '../Pages/Dashboard/Dashboard/Dashboard';
+// import Dashboard from '../Pages/Dashboard/Dashboard/Dashboard';
 import SelectedClasses from '../Pages/Dashboard/SelectedClasses/SelectedClasses';
 import EnrolledClasses from '../Pages/Dashboard/EnrolledClasses/EnrolledClasses';
 import PrivateRoute from '../Hooks/PrivateRoute/PrivateRoute';
