@@ -32,6 +32,7 @@ const CheckoutForm = () => {
             setCardError('')
         }
     }
+
     return (
         <>
 
