@@ -104,7 +104,7 @@ const SelectedClasses = () => {
                                         >
                                             Remove
                                         </button>
-                                        <Link to={'/dashboard/payment/:id'}>
+                                        <Link to={'/dashboard/payment'}>
                                             <button
                                                 className="btn btn-primary bg-green-700"
                                             >
