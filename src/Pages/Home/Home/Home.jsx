@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Banner from '../Banner/Banner';
-// import PopularClasses from '../PopularClasses/PopularClasses';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import Feedback from '../Feedback/Feedback';
 import AllPopularClasses from '../PopularClasses/AllPopularClasses';
