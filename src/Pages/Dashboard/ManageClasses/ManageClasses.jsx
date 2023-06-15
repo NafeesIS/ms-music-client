@@ -124,10 +124,10 @@ const ManageClasses = () => {
 
     return (
         <div className="items-center justify-center text-center p-6">
-            <h2 className="text-4xl font-bold font-serif my-4 text-center">
+            <h2 className="text-2xl md:text-5xl font-bold font-serif my-4 text-center">
                 Manage Classes
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2  justify-center items-center gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-4 p-0 md:p-2">
                 {classes.map((classItem) => (
                     <div className="card w-96 bg-base-100 shadow-xl" key={classItem._id}>
                         <figure className="px-10 pt-10">

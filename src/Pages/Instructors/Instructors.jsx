@@ -12,7 +12,7 @@ const Instructors = () => {
 
     return (
         <div>
-            <div className="text-6xl font-serif font-bold text-center m-14 italic">
+            <div className="text-2xl md:text-6xl font-serif font-bold text-center m-14 italic">
                 All Music Instructors
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8 justify-center items-center">
@@ -27,10 +27,6 @@ const Instructors = () => {
                                     <h2 className="card-title">{instructor.name}</h2>
                                     <p><span className="font-semibold m-1">Email:</span>{instructor.email}</p>
                                     <p><span className="font-semibold m-1">Classes Taken:</span>{instructor.classesTaken}</p>
-
-                                    <div className="card-actions">
-                                        <button className="btn btn-primary bg-[#0e6969]">See Classes</button>
-                                    </div>
                                 </div>
                             </div>
                         </div>

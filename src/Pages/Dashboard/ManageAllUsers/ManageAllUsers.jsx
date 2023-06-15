@@ -98,9 +98,9 @@ const ManageAllUsers = () => {
             <Helmet>
                 <title>MS Music | All users</title>
             </Helmet>
-            <h3 className="text-4xl font-serif font-bold my-4 text-center mx-8">Total Users: {users.length}</h3>
-            <div className="overflow-x-auto">
-                <table className="table table-zebra w-full">
+            <h3 className="text-2xl md:text-4xl font-serif font-bold my-4 text-center mx-8">Total Users: {users.length}</h3>
+            <div className="table-container overflow-x-auto">
+                <table className="min-w-full table table-auto w-full ">
                     {/* head */}
                     <thead className='text-black'>
                         <tr>

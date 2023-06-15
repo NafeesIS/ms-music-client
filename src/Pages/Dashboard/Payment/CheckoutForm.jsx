@@ -7,7 +7,7 @@ const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
 
-    const [caerError, setCardError] = useState('')
+    const [cardError, setCardError] = useState('')
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -25,7 +25,7 @@ const CheckoutForm = () => {
         })
         if (error) {
             console.log('error', error);
-            setCardError(error)
+            setCardError(error.message)
         }
         else {
             console.log('payment method', paymentMethod);
@@ -43,7 +43,9 @@ const CheckoutForm = () => {
                 <button className="btn btn-primary justify-center items-center" type="submit" disabled={!stripe}>
                     Pay
                 </button>
+                {cardError && <p className="text-red-600">{cardError}</p>}
             </form>
+
         </>
 
     );

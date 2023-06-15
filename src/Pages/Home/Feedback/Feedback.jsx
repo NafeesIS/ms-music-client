@@ -15,7 +15,7 @@ const Feedback = () => {
     return (
         <div className="bg-gray-100 py-10 mt-8">
             <div className="container mx-auto px-4">
-                <h2 className="text-6xl font-bold font-serif text-center mb-8">Our Feedbacks</h2>
+                <h2 className="text-2xl md:text-6xl font-bold font-serif text-center mb-8">Student Feedbacks</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {feedbacks.map((feedback) => (
                         <div key={feedback.id} className="bg-white p-6 rounded-lg shadow">

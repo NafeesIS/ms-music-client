@@ -1,26 +1,84 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../../Hooks/Provider/AuthProvider/AuthProvider";
+import useAdmin from "../../../Hooks/UseAdmin/UseAdmin";
+import useInstructor from "../../../Hooks/useInstructor/useInstructor";
+
 
 const PopularClasses = () => {
     const [popularClasses, setPopularClasses] = useState([]);
-
+    const { user } = useContext(AuthContext);
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     useEffect(() => {
-        // Fetch latest class data from the API
         fetch("https://ms-music-server.vercel.app/classes")
             .then((res) => res.json())
             .then((data) => {
-                // Sort classes based on the number of students in descending order
                 const sortedClasses = data.sort(
                     (a, b) => b.numberOfStudents - a.numberOfStudents
                 );
-                // Set popularClasses to the top 6 classes
                 setPopularClasses(sortedClasses.slice(0, 6));
             })
             .catch((error) => console.log(error));
     }, []);
 
+    const handleSelectClass = (classItem) => {
+        if (user && user.email) {
+            const selectedItem = {
+                image: classItem.image,
+                instructor: classItem.instructor,
+                availableSeats: classItem.availableSeats,
+                price: classItem.price,
+                email: user.email,
+            };
+
+            // Check if the class item is already selected by the user
+            const isClassItemSelected = popularClasses.find(
+                (item) => item.image === classItem.image && item.email === user.email
+            );
+
+            if (isClassItemSelected) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: "You have already selected this class!",
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+                return;
+            }
+
+            fetch("https://ms-music-server.vercel.app/selected_classes", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(selectedItem),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.insertedId) {
+                        setPopularClasses((prevClasses) => [
+                            ...prevClasses,
+                            selectedItem,
+                        ]);
+
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Added To Selected Classes!",
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }
+                });
+        }
+    };
+
     return (
         <div className="mt-12">
-            <div className="text-6xl font-serif font-bold text-center m-14">
+            <div className="text-2xl md:text-6xl font-serif font-bold text-center m-14">
                 Our Most Popular Classes
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8 justify-center items-center">
@@ -53,7 +111,21 @@ const PopularClasses = () => {
                                     {popularClass.price}
                                 </p>
                                 <div className="card-actions">
-                                    <button className="btn btn-primary bg-[#0e6969]">Select</button>
+                                    {user ? (
+                                        <button
+                                            className="btn btn-primary bg-[#0e6969]"
+                                            onClick={() => handleSelectClass(popularClass)}
+                                            disabled={isAdmin || isInstructor}
+                                        >
+                                            Select
+                                        </button>
+                                    ) : (
+                                        <Link to="/login">
+                                            <button className="btn btn-primary bg-[#0e6969]">
+                                                Login to Select
+                                            </button>
+                                        </Link>
+                                    )}
                                 </div>
                             </div>
                         </div>

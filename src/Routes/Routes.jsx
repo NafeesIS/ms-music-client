@@ -21,6 +21,8 @@ import AllDashboard from '../Pages/Dashboard/AllDashboard/AllDashboard';
 import UpdateClass from '../Pages/Dashboard/UpdateClass/Updateclass';
 import Payment from '../Pages/Dashboard/Payment/Payment';
 import AdminRoute from './AdminRoute';
+import PageNotFound from '../Pages/PageNotFound/PageNotFound';
+import AllClasses from '../Pages/Classes/AllClasses';
 
 
 
@@ -43,7 +45,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/classes',
-                element: <Classes></Classes>
+                element: <AllClasses></AllClasses>
             },
             {
                 path: '/instructors',
@@ -95,4 +97,8 @@ export const router = createBrowserRouter([
 
         ]
     },
+    {
+        path: '*',
+        element: <PageNotFound></PageNotFound>
+    }
 ]);

@@ -21,8 +21,8 @@ const PopularInstructors = () => {
     return (
         <div>
             <div>
-                <div className="text-6xl font-serif font-bold text-center m-14">
-                    All Music Instructors
+                <div className="text-2xl md:text-6xl font-serif font-bold text-center m-14">
+                    Our Popular Instructors
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8 justify-center items-center">
                     {instructors.map((instructor) => (
@@ -46,11 +46,7 @@ const PopularInstructors = () => {
                                         {instructor.classesTaken}
                                     </p>
 
-                                    <div className="card-actions">
-                                        <button className="btn btn-primary bg-[#0e6969]">
-                                            Select
-                                        </button>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

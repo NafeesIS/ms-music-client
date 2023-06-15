@@ -68,14 +68,14 @@ const SelectedClasses = () => {
 
     return (
         <div>
-            <div className="text-4xl font-serif font-bold text-center m-14">
+            <div className="text-2xl md:text-4xl font-serif font-bold text-center m-14">
                 Selected Classes
             </div>
             {selectedClassItems.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8 justify-center items-center">
                     {selectedClassItems.map((classItem) => (
                         <div key={classItem._id}>
-                            <div className="card mx-auto bg-base-100 shadow-xl">
+                            <div className="card mx-auto bg-base-100 shadow-xl items-center justify-center">
                                 <figure className="px-10 pt-10">
                                     <img
                                         src={classItem.image}

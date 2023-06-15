@@ -68,7 +68,7 @@ const AddAClass = () => {
 
     return (
         <div className='bg-slate-200 md:p-8 md:m-8 rounded-lg'>
-            <h1 className='text-center text-3xl md:text-6xl font-serif font-bold italic text-pink-800 p-8 md:my-8'>Add a Class</h1>
+            <h1 className='text-center text-2xl md:text-5xl font-serif font-bold italic text-pink-800 p-8 md:my-8'>Add a Class</h1>
             <div className="max-w-screen-lg mx-auto p-4">
                 <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="col-span-2">

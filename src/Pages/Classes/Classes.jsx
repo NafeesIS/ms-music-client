@@ -2,12 +2,15 @@ import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Hooks/Provider/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import useAdmin from "../../Hooks/UseAdmin/UseAdmin";
+import useInstructor from "../../Hooks/useInstructor/useInstructor";
 
 const Classes = () => {
     const [classes, setClasses] = useState([]);
     const [selectedClassItems, setSelectedClassItems] = useState([]);
     const { user } = useContext(AuthContext);
-
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     useEffect(() => {
         // Fetch latest class data from the API
         fetch("https://ms-music-server.vercel.app/classes")
@@ -99,7 +102,7 @@ const Classes = () => {
 
     return (
         <div>
-            <div className="text-6xl font-serif font-bold text-center m-14 italic">
+            <div className="text-2xl md:text-6xl font-serif font-bold text-center m-14 italic">
                 All Music Classes
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8 justify-center items-center">
@@ -132,6 +135,7 @@ const Classes = () => {
                                         <button
                                             className="btn btn-primary bg-[#0e6969]"
                                             onClick={() => handleSelectClass(classItem)}
+                                            disabled={isAdmin || isInstructor}
                                         >
                                             Select
                                         </button>

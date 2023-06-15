@@ -13,7 +13,8 @@
     top: 50%;
     left: 20px;
     transform: translateY(-50%);
-    font-size: 4rem;
+
     font-family: serif;
+
     /* color: white; */
 }
