@@ -25,22 +25,27 @@ const CheckoutForm = () => {
         })
         if (error) {
             console.log('error', error);
+            setCardError(error)
         }
         else {
-            console.log('payment method', paymentMethod)
+            console.log('payment method', paymentMethod);
+            setCardError('')
         }
     }
     return (
-        <form className="w-[20rem] md:w-[40rem] m-4 spa grid grid-cols-1 border-2 gap-12 justify-center items-center" onSubmit={handleSubmit}>
-            <CardElement
-                options={{
+        <>
+            <form className="w-[20rem] md:w-[40rem] m-4 spa grid grid-cols-1 border-2 gap-12 justify-center items-center" onSubmit={handleSubmit}>
+                <CardElement
+                    options={{
 
-                }}
-            />
-            <button className="btn btn-primary justify-center items-center" type="submit" disabled={!stripe}>
-                Pay
-            </button>
-        </form>
+                    }}
+                />
+                <button className="btn btn-primary justify-center items-center" type="submit" disabled={!stripe}>
+                    Pay
+                </button>
+            </form>
+        </>
+
     );
 };
 
