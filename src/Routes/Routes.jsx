@@ -6,7 +6,7 @@ import Main from '../Layout/Main';
 import Home from '../Pages/Home/Home/Home';
 import SignUp from '../Pages/SignUp/SignUp';
 import Login from '../Pages/Login/Login';
-import Classes from '../Pages/Classes/Classes';
+// import Classes from '../Pages/Classes/Classes';
 import Instructors from '../Pages/Instructors/Instructors';
 import Dashboard from '../Pages/Dashboard/Dashboard/Dashboard';
 import SelectedClasses from '../Pages/Dashboard/SelectedClasses/SelectedClasses';
