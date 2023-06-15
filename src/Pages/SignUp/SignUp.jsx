@@ -47,6 +47,7 @@ const SignUp = () => {
                             .then((res) => res.json())
                             .then((data) => {
                                 Swal.fire({
+                                    icon: 'success',
                                     title: 'Successfully Signed Up',
                                     showClass: {
                                         popup: 'animate__animated animate__fadeInDown',
