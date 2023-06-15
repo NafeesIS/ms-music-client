@@ -34,6 +34,7 @@ const CheckoutForm = () => {
     }
     return (
         <>
+
             <form className="w-[20rem] md:w-[40rem] m-4 spa grid grid-cols-1 border-2 gap-12 justify-center items-center" onSubmit={handleSubmit}>
                 <CardElement
                     options={{
