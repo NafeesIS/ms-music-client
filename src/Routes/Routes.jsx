@@ -65,11 +65,11 @@ export const router = createBrowserRouter([
                     },
                     {
                         path: '/dashboard/manageclasses',
-                        element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
+                        element: <ManageClasses></ManageClasses>
                     },
                     {
                         path: '/dashboard/manageusers',
-                        element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
+                        element: <ManageUsers></ManageUsers>
                     },
                     {
                         path: '/dashboard/manageallusers',
