@@ -23,58 +23,58 @@ const PopularClasses = () => {
             .catch((error) => console.log(error));
     }, []);
 
-    const handleSelectClass = (classItem) => {
-        if (user && user.email) {
-            const selectedItem = {
-                image: classItem.image,
-                instructor: classItem.instructor,
-                availableSeats: classItem.availableSeats,
-                price: classItem.price,
-                email: user.email,
-            };
+    // const handleSelectClass = (classItem) => {
+    //     if (user && user.email) {
+    //         const selectedItem = {
+    //             image: classItem.image,
+    //             instructor: classItem.instructor,
+    //             availableSeats: classItem.availableSeats,
+    //             price: classItem.price,
+    //             email: user.email,
+    //         };
 
-            // Check if the class item is already selected by the user
-            const isClassItemSelected = popularClasses.find(
-                (item) => item.image === classItem.image && item.email === user.email
-            );
+    //         // Check if the class item is already selected by the user
+    //         const isClassItemSelected = popularClasses.find(
+    //             (item) => item.image === classItem.image && item.email === user.email
+    //         );
 
-            if (isClassItemSelected) {
-                Swal.fire({
-                    position: "top-end",
-                    icon: "error",
-                    title: "You have already selected this class!",
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-                return;
-            }
+    //         if (isClassItemSelected) {
+    //             Swal.fire({
+    //                 position: "top-end",
+    //                 icon: "error",
+    //                 title: "You have already selected this class!",
+    //                 showConfirmButton: false,
+    //                 timer: 1500,
+    //             });
+    //             return;
+    //         }
 
-            fetch("https://ms-music-server.vercel.app/selected_classes", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify(selectedItem),
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    if (data.insertedId) {
-                        setPopularClasses((prevClasses) => [
-                            ...prevClasses,
-                            selectedItem,
-                        ]);
+    //         fetch("https://ms-music-server.vercel.app/selected_classes", {
+    //             method: "POST",
+    //             headers: {
+    //                 "content-type": "application/json",
+    //             },
+    //             body: JSON.stringify(selectedItem),
+    //         })
+    //             .then((res) => res.json())
+    //             .then((data) => {
+    //                 if (data.insertedId) {
+    //                     setPopularClasses((prevClasses) => [
+    //                         ...prevClasses,
+    //                         selectedItem,
+    //                     ]);
 
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "Added To Selected Classes!",
-                            showConfirmButton: false,
-                            timer: 1500,
-                        });
-                    }
-                });
-        }
-    };
+    //                     Swal.fire({
+    //                         position: "top-end",
+    //                         icon: "success",
+    //                         title: "Added To Selected Classes!",
+    //                         showConfirmButton: false,
+    //                         timer: 1500,
+    //                     });
+    //                 }
+    //             });
+    //     }
+    // };
 
     return (
         <div className="mt-12">
